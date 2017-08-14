@@ -1,10 +1,8 @@
 class Stopwatch extends React.Component {//class Stopwatch {
     constructor() {
     	super()
-        this.running = false;
-        //this.display = display;
+        this.running = false;    
         this.reset();
-        //this.print(this.times);
     }
 
     reset() {//Metoda, która zeruje stoper.Zawiera minuty, sekundy i milisekundy.
@@ -16,10 +14,6 @@ class Stopwatch extends React.Component {//class Stopwatch {
         	}
     	}
     }		
-
-    //print() {//Metoda ustawia wewnętrzny tekst elementu DOM, który znajduje się pod atrybutem display. Dzieje się to przy użyciu metody format.
-        //this.display.innerText = this.format(this.times);
-	//}
 
 	format(times) {//Metoda przygotowuje tekst do wyświetlenia.Zwraca szablon, który wykorzystuje obiekt times.
         return `${pad0(times.minutes)}:${pad0(times.seconds)}:${pad0(Math.floor(times.miliseconds))}`;
@@ -35,7 +29,6 @@ class Stopwatch extends React.Component {//class Stopwatch {
 	step() {//Metoda sprawdza, czy stoper jest uruchomiony. Jeśli tak, należy metodą calculate przeliczyć odpowiednio minuty, sekundy i milisekundy, a następnie wydrukować wynik za pomocą metody print.
 	    if (!this.running) return;
 	    this.calculate();
-	    //this.print();
 	}
 
 	calculate() {//Metoda ta zeruje wartości milisekund i sekund, jeśli te przekroczą pewną wartość i odpowiednio zwiększa sekundy i minuty.	
